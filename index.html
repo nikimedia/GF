@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gypsy Fighters Ry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Gypsy Fighters Ry</h1>
+            <p>Gypsy Fighters Ry on voittoa tavoittelematon organisaatio, jonka tarkoituksena on opettaa lapsille ja nuorille aikuisille nyrkkeilyä ja tarjota turvallinen yhteisö, jossa viettää aikaa.</p>
+            <a href="#join" class="cta-button" id="joinButton">Liity Nyt</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Tietoa Kerhostamme</h2>
+        <p>Kerhomme on omistautunut tuomaan ihmisiä yhteen erilaisten aktiviteettien ja tapahtumien kautta. Keskitymme yhteisöllisyyden edistämiseen ja tarjoamme mahdollisuuksia henkilökohtaiseen kasvuun ja verkostoitumiseen.</p>
+    </section>
+
+    <section id="events">
+        <h2>Tapahtumat</h2>
+        <div class="carousel">
+            <div class="event">
+                <img src="images/boxing-boys.jpg" alt="Boxing for Boys">
+                <h3>Boxing for Boys</h3>
+                <p><strong>Päivämäärä:</strong> 15. kesäkuuta</p>
+                <p>Liity mukaamme jännittävään nyrkkeilyharjoitukseen pojille. Tule oppimaan uusia taitoja hauskassa ympäristössä!</p>
+            </div>
+            <div class="event">
+                <img src="images/boxing-girls.jpg" alt="Boxing for Girls">
+                <h3>Boxing for Girls</h3>
+                <p><strong>Päivämäärä:</strong> 10. elokuuta</p>
+                <p>Liity mukaamme voimistavaan nyrkkeilyharjoitukseen tytöille. Kehitä voimaa ja itseluottamusta kanssamme!</p>
+            </div>
+            <div class="event">
+                <img src="images/mindmap.jpg" alt="Drawing the Dream Maps">
+                <h3>Drawing the Dream Maps</h3>
+                <p><strong>Päivämäärä:</strong> 5. syyskuuta</p>
+                <p>Osallistu luovaan työpajaan, jossa piirrät omat unelmakarttasi. Anna mielikuvituksesi lentää!</p>
+            </div>
+            <div class="event">
+                <img src="images/music.jpg" alt="Music Festival">
+                <h3>Music Festival</h3>
+                <p><strong>Päivämäärä:</strong> 20. heinäkuuta</p>
+                <p>Nauti musiikkifestivaalista paikallisten bändien kanssa. Musiikkia, ruokaa ja paljon muuta!</p>
+            </div>
+            <div class="event">
+                <img src="images/bowling.jpg" alt="Bowling Event">
+                <h3>Bowling Event</h3>
+                <p><strong>Päivämäärä:</strong> 15. elokuuta</p>
+                <p>Osallistu hauskaan keilaustapahtumaan ja nauti hauskasta illasta ystävien kanssa!</p>
+            </div>
+            <div class="event">
+                <img src="images/yoga.jpg" alt="Yoga Retreat">
+                <h3>Yoga Retreat</h3>
+                <p><strong>Päivämäärä:</strong> 25. syyskuuta</p>
+                <p>Rentoudu ja virkistäydy joogan parissa luonnon keskellä. Tervetuloa kaikki tasot!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download-pdf">
+        <h2>Lataa Tapahtumat PDF-tiedostona</h2>
+        <a href="/events.pdf" class="cta-button" download>Lataa PDF</a>
+    </section>
+
+    <section id="principles">
+        <h2>Kerhon Periaatteet</h2>
+        <p>Kerhomme periaatteet ovat yhteisöllisyys, avoimuus, ja aktiivisuus. Kannustamme kaikkia jäseniämme osallistumaan aktiivisesti ja jakamaan ideoitaan ja ehdotuksiaan.</p>
+    </section>
+
+    <section id="join">
+        <h2>Liity Kerhoomme</h2>
+        <form id="joinForm" onsubmit="handleFormSubmit(event)">
+            <label for="name">Etunimi:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="surname">Sukunimi:</label>
+            <input type="text" id="surname" name="surname" required>
+
+            <label for="email">Sähköposti:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Puhelin:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="interests">Kiinnostuksen kohteet:</label>
+            <textarea id="interests" name="interests" rows="4"></textarea>
+            
+            <button type="submit">Liity Nyt</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Osoite: Kerhokatu 1, 00100 Helsinki</p>
+        <p>Puhelin: 123-456-7890</p>
+        <p>Sähköposti: info@kerho.fi</p>
+        <p>Seuraa meitä sosiaalisessa mediassa: Facebook, Instagram, Twitter</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const interests = document.getElementById('interests').value;
+
+            fetch('/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, surname, email, phone, interests }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+            event.target.reset();
+        }
+
+        $(document).ready(function(){
+            $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            $('#joinButton').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $('#join').offset().top
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>

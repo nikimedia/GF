@@ -1,0 +1,260 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Very light gray background */
+    color: #333; /* Dark gray text color */
+}
+
+header {
+    background-image: linear-gradient(to right, rgba(0, 128, 128, 0.7), rgba(0, 128, 128, 0.7)), url('https://source.unsplash.com/1600x900/?boxing,ring');
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.cta-button {
+    background-color: #008080; /* Teal background */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #20b2aa; /* Lighter teal on hover */
+}
+
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #ffffff; /* White section background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border-radius: 10px;
+}
+
+section h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light input background */
+    color: #333333; /* Dark input text color */
+}
+
+form button {
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: #008080; /* Teal background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #20b2aa; /* Lighter teal on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Dark gray background */
+    color: white;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.event img {
+    width: 100%;
+    max-width: 300px; /* Ensure max-width for larger screens */
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event h3 {
+    margin: 0;
+    color: #333333;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.event p {
+    text-align: center;
+    color: #666666;
+}
+
+.event p strong {
+    font-size: 1.1em;
+    color: #333333;
+}
+
+.carousel {
+    margin-top: 20px;
+}
+
+.slick-slide {
+    padding: 0 10px; /* Add padding between slides */
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+#download-pdf {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #ffffff; /* White section background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border-radius: 10px;
+}
+
+#download-pdf h2 {
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+    .event img {
+        height: 250px;
+    }
+
+    .event h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    .event img {
+        height: 200px;
+    }
+
+    .event h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    section {
+        padding: 15px 10px;
+    }
+
+    .event {
+        align-items: center; /* Center align items */
+    }
+
+    .event img {
+        height: 180px;
+        max-width: 100%; /* Ensure the image does not exceed container width */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .event h3 {
+        font-size: 1em;
+    }
+
+    .carousel {
+        display: block; /* Display block for mobile */
+        overflow-y: auto; /* Enable vertical scrolling */
+        white-space: normal; /* Normal white-space */
+    }
+
+    .slick-slide {
+        display: block;
+        padding: 0; /* Remove padding for mobile */
+        margin-bottom: 20px; /* Add space between events */
+    }
+
+    .slick-list {
+        margin: 0; /* Remove margin for mobile */
+    }
+}
